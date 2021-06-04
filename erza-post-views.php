@@ -43,4 +43,21 @@ function erza_add_view() {
 	return $current_views;
  }
 
+ function erza_show_views($singular = "view", $plural = "views", $before = "This post has: ") {
+	global $post;
+	$current_views = erza_get_view_count();
+ 
+	$views_text = $before . $current_views . " ";
+ 
+	if ($current_views == 1) {
+	   $views_text .= $singular;
+	}
+	else {
+	   $views_text .= $plural;
+	}
+ 
+	echo $views_text;
+ 
+ }
+
 ?>
